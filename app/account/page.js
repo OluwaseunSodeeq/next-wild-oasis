@@ -1,11 +1,8 @@
-import Link from "next/link";
-
 function Page() {
   return (
-    <>
-      <h1>Account!</h1>
-      <Link href="/about">About</Link>;
-    </>
+    <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+      Welcome, Oluwaseun
+    </h2>
   );
 }
 

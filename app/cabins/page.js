@@ -1,8 +1,7 @@
 import { Suspense } from "react";
-import CabinList from "../_components/CabinList";
-import Spinner from "../_components/Spinner";
-// import Counter from "../_components/Counter";
 import Filter from "../_components/Filter";
+import Spinner from "../_components/Spinner";
+import CabinList from "../_components/CabinList";
 import ReservationReminder from "../_components/ReservationReminder";
 
 export const revalidate = 3600;
@@ -13,8 +12,7 @@ export const metadata = {
 };
 
 export default function Page({ searchParams }) {
-  // const filter = searchParams?.capacity ?? "all";
-  const filter = [];
+  const filter = searchParams?.capacity ?? "all";
 
   return (
     <div>
