@@ -11,6 +11,8 @@ export async function GET(request, { params }) {
 
     return Response.json({ cabin, bookedDates });
   } catch {
-    return Response.json({ message: "Cabin Not Found" });
+    return Response.json({ message: "Cabin not found" });
   }
 }
+
+// export async function POST() {}

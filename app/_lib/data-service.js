@@ -167,4 +167,3 @@ export async function createGuest(newGuest) {
 
   return data;
 }
-/////////////

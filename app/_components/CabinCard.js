@@ -4,16 +4,16 @@ import { UsersIcon } from "@heroicons/react/24/solid";
 
 function CabinCard({ cabin }) {
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
-  // Use a default image if `image` is missing or invalid
-  const validImage = image?.startsWith("http") ? image : "/default-image.jpg";
+
   return (
     <div className="flex border-primary-800 border">
       <div className="flex-1 relative">
         <Image
-          src={validImage}
+          src={image}
           fill
           alt={`Cabin ${name}`}
           className="object-cover border-r border-primary-800"
+          sizes="100%"
         />
       </div>
 

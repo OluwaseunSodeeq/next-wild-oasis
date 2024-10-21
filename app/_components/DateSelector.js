@@ -2,9 +2,9 @@
 
 import {
   differenceInDays,
+  isPast,
   isSameDay,
   isWithinInterval,
-  isPast,
 } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
@@ -29,7 +29,6 @@ function DateSelector({ settings, cabin, bookedDates }) {
   const numNights = differenceInDays(displayRange.to, displayRange.from);
   const cabinPrice = numNights * (regularPrice - discount);
 
-  // SETTINGS
   const { minBookingLength, maxBookingLength } = settings;
 
   return (

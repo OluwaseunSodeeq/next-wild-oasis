@@ -8,11 +8,10 @@ import SubmitButton from "./SubmitButton";
 function ReservationForm({ cabin, user }) {
   const { range, resetRange } = useReservation();
   const { maxCapacity, regularPrice, discount, id } = cabin;
-  const { name, image } = user;
-  const firstName = user.name.split(" ").at(0);
 
   const startDate = range.from;
   const endDate = range.to;
+
   const numNights = differenceInDays(endDate, startDate);
   const cabinPrice = numNights * (regularPrice - discount);
 
@@ -25,6 +24,7 @@ function ReservationForm({ cabin, user }) {
   };
 
   const createBookingWithData = createBooking.bind(null, bookingData);
+
   return (
     <div className="scale-[1.01]">
       <div className="bg-primary-800 text-primary-300 px-16 py-2 flex justify-between items-center">
@@ -35,16 +35,12 @@ function ReservationForm({ cabin, user }) {
             // Important to display google profile images
             referrerPolicy="no-referrer"
             className="h-8 rounded-full"
-            src={image}
-            alt={name}
+            src={user.image}
+            alt={user.name}
           />
-          <p>{firstName}</p>
+          <p>{user.name}</p>
         </div>
       </div>
-
-      {/* <p>
-        {String(range.from)} to {String(range.to)}
-      </p> */}
 
       <form
         // action={createBookingWithData}
@@ -91,7 +87,7 @@ function ReservationForm({ cabin, user }) {
               Start by selecting dates
             </p>
           ) : (
-            <SubmitButton pendingLabel="Reserveing">Reserve now</SubmitButton>
+            <SubmitButton pendingLabel="Reserving...">Reserve now</SubmitButton>
           )}
         </div>
       </form>
