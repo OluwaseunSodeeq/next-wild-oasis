@@ -8,7 +8,7 @@ function UpdateProfileForm({ guest, children }) {
   const [count, setCount] = useState();
 
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
-
+  console.log(fullName, email, nationality, nationalID, countryFlag);
   return (
     <form
       action={updateGuest}
